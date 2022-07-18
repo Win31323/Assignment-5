@@ -1,0 +1,21 @@
+import random
+
+wheel_of_chores = {
+    "Kitchen": ("Dishes", "Cooking", "Sweeping"),
+    "Bathroom": ("Clean bathroom 1", "Clean bathroom 2", "Clean bathroom 3"),
+    "Gameroom": ("Clean gameroom", "Wash and sanitize couch blankets and pillows", "Dust all room surfaces"),
+}
+
+while (True):
+    choice = input("What would you like to spin? ")
+    if choice in wheel_of_chores:
+        chosen_wheel = wheel_of_chores[choice]
+        num = random.randint(0, len(chosen_wheel) - 1)
+        random_chore = chosen_wheel[num]
+        print (random_chore)
+    elif choice == "quit":
+        quit()
+    else:
+        print("Invalid choice. Please choose one of the following chore wheels, or quit to exit:")
+        for key in wheel_of_chores:
+            print(key)
